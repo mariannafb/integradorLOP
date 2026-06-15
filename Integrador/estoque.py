@@ -1,16 +1,3 @@
-"""
-Automatização de Processos Logísticos
-Projeto Integrador - SENAI 1DS
-
-Fluxo:
-  1. Lê o CSV de estoque com pandas.
-  2. Classifica o nível de estoque de cada produto.
-  3. Gera dados.js (JSON dos produtos) para alimentar a página web.
-  4. Gera estoque.html + estoque.css (página estilizada).
-  5. Gera relatório em Excel (.xlsx) com openpyxl.
-  6. Gera relatório em CSV (.csv) com pandas.
-"""
-
 import json
 import pandas as pd
 from openpyxl import Workbook
@@ -18,10 +5,7 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from datetime import datetime
 
-
-# ──────────────────────────────────────────────
 # CONFIGURAÇÕES / CONSTANTES
-# ──────────────────────────────────────────────
 
 ARQUIVO_CSV_ENTRADA = "Produtos.csv"
 ARQUIVO_DADOS_JS    = "dados.js"
@@ -40,10 +24,7 @@ COR_MEDIO   = "FFF3CD"
 COR_CHEIO   = "D4EDDA"
 COR_ZEBRA   = "F5F5F5"
 
-
-# ──────────────────────────────────────────────
 # 1. LEITURA E PREPARAÇÃO DOS DADOS (pandas)
-# ──────────────────────────────────────────────
 
 def ler_estoque(caminho: str) -> pd.DataFrame:
     """Lê o CSV de estoque e retorna um DataFrame tratado."""
@@ -84,10 +65,7 @@ def calcular_colunas(df: pd.DataFrame) -> pd.DataFrame:
     df["Nivel"]       = df["Qtde_Livre"].apply(classificar_nivel)
     return df
 
-
-# ──────────────────────────────────────────────
 # 2. GERAÇÃO DOS DADOS PARA A PÁGINA WEB (json)
-# ──────────────────────────────────────────────
 
 def gerar_dados_js(df: pd.DataFrame, caminho: str) -> None:
     """Converte o DataFrame em JSON e escreve dados.js (variável global)."""
@@ -114,10 +92,7 @@ def gerar_dados_js(df: pd.DataFrame, caminho: str) -> None:
     except PermissionError:
         raise PermissionError(f"Sem permissão para escrever: {caminho}")
 
-
-# ──────────────────────────────────────────────
 # 3. GERAÇÃO DO SCRIPT JS QUE MONTA A PÁGINA
-# ──────────────────────────────────────────────
 
 def gerar_script_js(caminho: str) -> None:
     """Escreve script.js: monta cards e tabela a partir de ESTOQUE_DATA."""
@@ -193,10 +168,7 @@ document.addEventListener("DOMContentLoaded", inicializar);
     except PermissionError:
         raise PermissionError(f"Sem permissão para escrever: {caminho}")
 
-
-# ──────────────────────────────────────────────
 # 4. GERAÇÃO DO CSS
-# ──────────────────────────────────────────────
 
 def gerar_css(caminho: str) -> None:
     """Escreve estoque.css com o estilo da página."""
@@ -292,9 +264,8 @@ footer {
         raise PermissionError(f"Sem permissão para escrever: {caminho}")
 
 
-# ──────────────────────────────────────────────
+
 # 5. GERAÇÃO DO HTML (apenas estrutura — dados via JS)
-# ──────────────────────────────────────────────
 
 def gerar_html(caminho: str, css_path: str, dados_js_path: str, script_js_path: str) -> None:
     """Escreve a página HTML, que carrega CSS e os arquivos JS de dados/script."""
@@ -341,10 +312,7 @@ def gerar_html(caminho: str, css_path: str, dados_js_path: str, script_js_path: 
     except PermissionError:
         raise PermissionError(f"Sem permissão para escrever: {caminho}")
 
-
-# ──────────────────────────────────────────────
 # 6. GERAÇÃO DO RELATÓRIO EXCEL (openpyxl)
-# ──────────────────────────────────────────────
 
 def _borda_fina() -> Border:
     lado = Side(style="thin", color="CCCCCC")
@@ -451,10 +419,7 @@ def gerar_excel(df: pd.DataFrame, caminho: str) -> None:
     except PermissionError:
         raise PermissionError(f"Sem permissão para escrever: {caminho}")
 
-
-# ──────────────────────────────────────────────
 # 7. GERAÇÃO DO RELATÓRIO CSV (pandas)
-# ──────────────────────────────────────────────
 
 def gerar_csv(df: pd.DataFrame, caminho: str) -> None:
     """Exporta o DataFrame final (com colunas calculadas) para CSV."""
@@ -470,10 +435,7 @@ def gerar_csv(df: pd.DataFrame, caminho: str) -> None:
     except OSError as erro:
         raise OSError(f"Erro ao salvar CSV: {erro}")
 
-
-# ──────────────────────────────────────────────
 # ORQUESTRAÇÃO PRINCIPAL
-# ──────────────────────────────────────────────
 
 def processar_estoque() -> None:
     """Executa todo o fluxo de automação logística."""
