@@ -1,0 +1,101 @@
+Codigo;Produto;Qtde_Disponivel;Qtde_Reservada;Qtde_Livre;Preco;Valor_Total;Nivel
+725481093;Processador AMD Ryzen 5 5600X Ref-824;189;52;137;984,3;186032,69999999998;Cheio
+032846159;Bateria Moura 60Ah M60GD Ref-551;42;11;31;532,15;22350,3;Médio
+510487362;Filtro de Óleo Fram Wega Ref-442;310;95;215;42,8;13268,0;Cheio
+884391052;Memória RAM Corsair Vengeance 8GB DDR4 Ref-109;154;32;122;210,45;32409,3;Cheio
+302948175;Pastilha de Freio Dianteira Brembo Ref-673;88;14;74;195,6;17212,8;Médio
+641029483;Placa de Vídeo RTX 4060 Ref-201;34;8;26;2150,0;73100,0;Médio
+119284756;SSD Kingston NV2 1TB NVMe Ref-889;240;73;167;399,9;95976,0;Cheio
+903821546;Disco de Freio Ventilado Fremax Ref-341;65;12;53;285,4;18551,0;Médio
+447192830;"Monitor LG UltraGear 24"" IPS Ref-762";51;15;36;1050,0;53550,0;Médio
+582019483;Amortecedor Dianteiro Monroe Ref-129;28;4;24;480,0;13440,0;Médio
+002938471;Óleo de Motor Castrol Magnatec 5W40 1L Ref-611;410;110;300;59,9;24559,0;Cheio
+661928473;Placa-Mãe ASUS Prime B550M Ref-523;92;18;74;749,0;68908,0;Médio
+883019284;Palheta do Limpador Bosch Aerotwin Ref-404;175;25;150;115,0;20125,0;Cheio
+340192847;Fonte Corsair CV550 550W Ref-892;113;22;91;365,5;41301,5;Cheio
+552019384;Vela de Ignição NGK Iridium Ref-712;290;40;250;65,0;18850,0;Cheio
+102938482;Processador AMD Ryzen 7 5700X Ref-112;74;15;59;1199,0;88726,0;Médio
+492019384;Bateria Heliar 60Ah HF60GD Ref-903;53;8;45;510,0;27030,0;Médio
+381029384;Filtro de Combustível Tecfil Ref-332;420;85;335;38,5;16170,0;Cheio
+882910293;Memória RAM Kingston Fury 16GB Ref-445;198;44;154;389,0;77022,0;Cheio
+901293847;Pastilha de Freio Cobreq Dianteira Ref-212;112;20;92;145,0;16240,0;Cheio
+481029384;Placa de Vídeo RTX 3060 MSI Ref-765;41;9;32;1850,0;75850,0;Médio
+771029384;SSD Crucial BX500 480GB Ref-221;165;38;127;245,0;40425,0;Cheio
+291029384;Disco de Freio Traseiro TRW Ref-809;78;14;64;189,9;14812,2;Médio
+661029384;"Monitor Samsung T350 24"" Ref-543";62;11;51;799,0;49538,0;Médio
+112039485;Amortecedor Traseiro Cofap Ref-602;45;6;39;390,0;17550,0;Médio
+992039485;Óleo de Motor Shell Helix 5W30 1L Ref-311;380;90;290;64,9;24662,000000000004;Cheio
+332039485;Placa-Mãe Gigabyte B450M Ref-887;105;23;82;629,0;66045,0;Cheio
+442039485;Palheta do Limpador Dyna Slim Ref-441;210;35;175;85,0;17850,0;Cheio
+552039485;Fonte EVGA 600W 80 Plus Ref-901;87;14;73;399,0;34713,0;Médio
+772039485;Vela de Ignição Bosch Super 4 Ref-123;340;55;285;48,0;16320,0;Cheio
+882039485;Processador Intel Core i5 12400F Ref-554;120;28;92;915,0;109800,0;Cheio
+113049586;Bateria ACDelco 60Ah Ref-702;39;7;32;499,0;19461,0;Médio
+223049586;Filtro de Ar Motores Mann Filter Ref-881;280;60;220;52,0;14560,0;Cheio
+663049586;Memória RAM XPG Spectrix 8GB Ref-992;142;25;117;235,0;33370,0;Cheio
+443049586;Pastilha de Freio Dianteira Fras-le Ref-104;135;22;113;138,0;18630,0;Cheio
+553049586;Placa de Vídeo GTX 1650 Speedster Ref-305;29;5;24;949,0;27521,0;Médio
+993049586;SSD SanDisk Plus 1TB SATA Ref-402;115;21;94;369,0;42435,0;Cheio
+333049586;Disco de Freio Dianteira Hipper Freios Ref-771;95;18;77;165,0;15675,0;Médio
+773049586;"Monitor ASUS VP228H 21.5"" Ref-662";48;8;40;699,0;33552,0;Médio
+883049586;Amortecedor Dianteiro Nakata Ref-339;36;5;31;425,0;15300,0;Médio
+114059687;Óleo de Motor Selenia 15W40 1L Ref-502;290;70;220;45,5;13195,0;Cheio
+224059687;Placa-Mãe MSI Mag B550 Ref-883;64;12;52;899,0;57536,0;Médio
+334059687;Palheta Limpador Valeo Cibié Ref-219;160;18;142;95,0;15200,0;Cheio
+444059687;Fonte XPG Pylon 650W Ref-774;93;19;74;415,0;38595,0;Médio
+554059687;Vela de Ignição Magneti Marelli Ref-661;410;50;360;35,0;14350,0;Cheio
+664059687;Processador AMD Ryzen 5 4500 Ref-102;155;31;124;549,0;85095,0;Cheio
+774059687;Bateria Bosch 60Ah S5 Ref-991;47;10;37;589,0;27683,0;Médio
+884059687;Filtro de Óleo Bosch Premium Ref-552;490;120;370;49,9;24451,0;Cheio
+994059687;Memória RAM Geil Orion 16GB Ref-304;88;14;74;349,0;30712,0;Médio
+115069788;Pastilha de Freio Dianteira Willtec Ref-801;160;25;135;112,0;17920,0;Cheio
+225069788;Placa de Vídeo RX 6600 V2 Ref-441;52;13;39;1499,0;77948,0;Médio
+335069788;SSD XPG SFT 1TB NVMe Ref-663;134;28;106;429,0;57486,0;Cheio
+445069788;Disco de Freio Traseiro Vargas Ref-904;62;9;53;155,0;9610,0;Médio
+555069788;"Monitor AOC Hero 24"" 144Hz Ref-221";41;11;30;1199,0;49159,0;Médio
+665069788;Amortecedor Traseiro Kyb Ref-504;54;8;46;460,0;24840,0;Médio
+775069788;Óleo de Motor Lubrax Tecno 10W40 Ref-882;330;65;265;42,0;13860,0;Cheio
+885069788;Placa-Mãe Biostar H510M Ref-109;76;15;61;489,0;37164,0;Médio
+995069788;Palheta Limpador Trico Flex Ref-331;195;22;173;75,0;14625,0;Cheio
+116079889;Fonte Aerocool KCAS 500W Ref-772;112;18;94;289,0;32368,0;Cheio
+226079889;Vela de Ignição Denso Iridium Ref-449;240;35;205;79,9;19176,0;Cheio
+336079889;Processador Intel Core i3 12100F Ref-501;134;22;112;649,0;86966,0;Cheio
+446079889;Bateria Cral 60Ah CL60HD Ref-994;58;12;46;429,0;24882,0;Médio
+556079889;Filtro de Ar Condicionado Filter Ref-223;520;140;380;29,9;15548,0;Cheio
+666079889;Memória RAM Team Group 8GB Ref-551;210;45;165;189,0;39690,0;Cheio
+776079889;Pastilha de Freio Traseira Bosch Ref-803;94;16;78;165,0;15510,0;Médio
+886079889;Placa de Vídeo RTX 4070 Dual Ref-104;21;4;17;4399,0;92379,0;Crítico
+996079889;SSD WD Green 480GB SATA Ref-668;185;32;153;259,0;47915,0;Cheio
+117089990;Disco de Freio Dianteiro MDS Ref-334;84;12;72;148,0;12432,0;Médio
+227089990;"Monitor Acer Nitro 23.8"" Ref-779";53;14;39;949,0;50297,0;Médio
+337089990;Amortecedor Dianteiro Corven Ref-202;42;5;37;360,0;15120,0;Médio
+447089990;Óleo de Motor Havoline 5W30 1L Ref-559;360;80;280;54,9;19764,0;Cheio
+557089990;Placa-Mãe ASUS TUF Gaming B550M Ref-884;82;19;63;999,0;81918,0;Médio
+667089990;Palheta do Limpador Valeo Evolution Ref-111;140;15;125;105,0;14700,0;Cheio
+777089990;Fonte Seasonic Core 550W Ref-442;46;8;38;549,0;25254,0;Médio
+887089990;Vela de Ignição ACDelco Ref-709;380;45;335;32,0;12160,0;Cheio
+997089990;Processador AMD Ryzen 9 5900X Ref-335;18;5;13;2399,0;43182,0;Crítico
+118090001;Bateria Tudor 60Ah TUD60 Ref-214;37;6;31;469,0;17353,0;Médio
+228090001;Filtro de Combustível Fram Ref-882;460;95;365;41,0;18860,0;Cheio
+338090001;Memória RAM Crucial Basics 16GB Ref-505;92;18;74;315,0;28980,0;Médio
+448090001;Pastilha de Freio Traseira Brembo Ref-664;52;8;44;245,0;12740,0;Médio
+558090001;Placa de Vídeo RX 7600 XT Ref-102;33;7;26;2349,0;77517,0;Médio
+668090001;SSD Kingston KC3000 1TB NVMe Ref-443;89;21;68;649,0;57761,0;Médio
+778090001;Disco de Freio Ventilado BD Ref-772;115;20;95;198,0;22770,0;Cheio
+888090001;"Monitor BenQ ZOWIE 24"" Ref-331";24;6;18;1699,0;40776,0;Crítico
+998090001;Amortecedor Traseiro Monroe OES Ref-556;68;11;57;415,0;28220,0;Médio
+119001112;Óleo de Motor Mobil Super 5W40 Ref-809;410;95;315;58,0;23780,0;Cheio
+229001112;Placa-Mãe ASRock Steel Legend Ref-212;73;14;59;849,0;61977,0;Médio
+339001112;Palheta Limpador Bosch Eco Ref-774;290;40;250;65,0;18850,0;Cheio
+449001112;Fonte Cooler Master 650W Ref-501;104;22;82;429,0;44616,0;Cheio
+559001112;Vela de Ignição Champion Ref-992;310;35;275;28,0;8680,0;Cheio
+669001112;Processador Intel Core i7 12700K Ref-103;31;8;23;2199,0;68169,0;Médio
+779001112;Bateria Heliar 70Ah HF70GD Ref-448;28;5;23;689,0;19292,0;Médio
+889001112;Filtro de Ar Elemento Tecfil Ref-339;390;75;315;46,0;17940,0;Cheio
+999001112;Memória RAM Netac RGB 8GB DDR4 Ref-559;165;30;135;199,0;32835,0;Cheio
+120012223;Pastilha de Freio Dianteira SYL Ref-702;198;32;166;98,0;19404,0;Cheio
+230012223;Placa de Vídeo GTX 1660 Super Ref-881;45;10;35;1349,0;60705,0;Médio
+340012223;SSD ADATA Legend 512GB NVMe Ref-219;142;26;116;289,0;41038,0;Cheio
+450012223;Disco de Freio Solido Fremax Ref-661;124;15;109;135,0;16740,0;Cheio
+560012223;"Monitor Philips 24"" IPS 75Hz Ref-104";76;12;64;749,0;56924,0;Médio
+670012223;Amortecedor Dianteiro Corven Plus Ref-552;39;4;35;385,0;15015,0;Médio

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estoque – E-Commerce</title>
+  <link rel="stylesheet" href="estoque.css" />
+</head>
+<body>
+  <header>
+    <h1>📦 Painel de Estoque</h1>
+    <p>Atualizado em: <span id="data-atualizacao">--</span></p>
+  </header>
+
+  <div class="cards" id="cards"></div>
+
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th><th>Produto</th><th>Disponível</th>
+          <th>Reservado</th><th>Livre</th><th>Preço Unit.</th>
+          <th>Valor Total</th><th>Nível</th>
+        </tr>
+      </thead>
+      <tbody id="corpo-tabela"></tbody>
+    </table>
+  </div>
+
+  <footer>Gerado automaticamente pelo sistema de estoque</footer>
+
+  <script src="dados.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
