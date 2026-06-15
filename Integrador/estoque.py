@@ -5,7 +5,7 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from datetime import datetime
 
-# CONFIGURAÇÕES / CONSTANTES
+# CONFIGURAÇÕES
 
 ARQUIVO_CSV_ENTRADA = "Produtos.csv"
 ARQUIVO_DADOS_JS    = "dados.js"
