@@ -6,12 +6,12 @@ from openpyxl.utils import get_column_letter #função utilitária do openpyxl q
 from datetime import datetime
 
 ARQUIVO_CSV_ENTRADA = "Produtos.csv"
-ARQUIVO_DADOS_JS    = "dados.js"
-ARQUIVO_SCRIPT_JS   = "script.js"
-ARQUIVO_HTML        = "estoque.html"
-ARQUIVO_CSS         = "estoque.css"
-ARQUIVO_XLSX        = "relatorio_estoque.xlsx"
-ARQUIVO_CSV_SAIDA   = "relatorio_estoque.csv"
+ARQUIVO_DADOS_JS = "dados.js"
+ARQUIVO_SCRIPT_JS = "script.js"
+ARQUIVO_HTML = "estoque.html"
+ARQUIVO_CSS  = "estoque.css"
+ARQUIVO_XLSX  = "relatorio_estoque.xlsx"
+ARQUIVO_CSV_SAIDA = "relatorio_estoque.csv"
 
 LIMITE_CRITICO = 20
 LIMITE_MEDIO   = 80
@@ -94,12 +94,12 @@ def gerar_dados_js(df: pd.DataFrame, caminho: str) -> None:
 def gerar_script_js(caminho: str) -> None:
     #Escreve script.js: monta cards e tabela a partir de ESTOQUE_DATA
     conteudo = """// script.js – monta a página de estoque a partir de ESTOQUE_DATA (dados.js)
-#formata um número em padrão da moeda brasileira
+//formata um número em padrão da moeda brasileira
 function formatarMoeda(valor) {
   return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
-#cria um badge colorido para o nível do estoque
+//cria um badge colorido para o nível do estoque
 function badgeNivel(nivel) {
   const classes = {
     "Crítico": "nivel-critico",
@@ -109,7 +109,7 @@ function badgeNivel(nivel) {
   return `<span class="badge ${classes[nivel] || ""}">${nivel}</span>`;
 }
 
-#monta os cards de resumo (total, críticos, médios, cheios) e coloca os coloca no html
+//monta os cards de resumo (total, críticos, médios, cheios) e coloca os coloca no html
 function montarCards(resumo) {
   const container = document.getElementById("cards");
   container.innerHTML = `
@@ -132,7 +132,7 @@ function montarCards(resumo) {
   `;
 }
 
-#monta as linhas da tabela de produtos e insere no corpo da tabela
+//monta as linhas da tabela de produtos e insere no corpo da tabela
 function montarTabela(produtos) {
   const corpo = document.getElementById("corpo-tabela");
   corpo.innerHTML = produtos.map((p) => `
