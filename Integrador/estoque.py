@@ -1,17 +1,19 @@
 import json
 import pandas as pd
 from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side #classes do openpyxl que representam cada aspecto visual de uma célula:
-from openpyxl.utils import get_column_letter #função utilitária do openpyxl que converte um número de coluna na letra correspondente do Excel
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.utils import get_column_letter
 from datetime import datetime
 
+# CONFIGURAÇÕES
+
 ARQUIVO_CSV_ENTRADA = "Produtos.csv"
-ARQUIVO_DADOS_JS = "dados.js"
-ARQUIVO_SCRIPT_JS = "script.js"
-ARQUIVO_HTML = "estoque.html"
-ARQUIVO_CSS  = "estoque.css"
-ARQUIVO_XLSX  = "relatorio_estoque.xlsx"
-ARQUIVO_CSV_SAIDA = "relatorio_estoque.csv"
+ARQUIVO_DADOS_JS    = "dados.js"
+ARQUIVO_SCRIPT_JS   = "script.js"
+ARQUIVO_HTML        = "estoque.html"
+ARQUIVO_CSS         = "estoque.css"
+ARQUIVO_XLSX        = "relatorio_estoque.xlsx"
+ARQUIVO_CSV_SAIDA   = "relatorio_estoque.csv"
 
 LIMITE_CRITICO = 20
 LIMITE_MEDIO   = 80
@@ -22,11 +24,10 @@ COR_MEDIO   = "FFF3CD"
 COR_CHEIO   = "D4EDDA"
 COR_ZEBRA   = "F5F5F5"
 
-#LEITURA E PREPARAÇÃO DOS DADOS
-
+#LEITURA E PREPARAÇÃO DOS DADOS (pandas)
 def ler_estoque(caminho: str) -> pd.DataFrame:
     #Lê o CSV de estoque e retorna um DataFrame tratado
-    try: #trata 3 tipos de erro: arquivo não encontrado, falta de permissão de leitura e falha na interpretação do csv
+    try:
         df = pd.read_csv(caminho, sep=";", encoding="utf-8", dtype={"Codigo": str})
     except FileNotFoundError:
         raise FileNotFoundError(f"Arquivo CSV não encontrado: {caminho}")
@@ -45,7 +46,6 @@ def ler_estoque(caminho: str) -> pd.DataFrame:
     print(f"[OK] {len(df)} produtos carregados do CSV.")
     return df
 
-
 def classificar_nivel(qtde_livre: int) -> str:
     #Retorna o nível do estoque com base na quantidade livre
     if qtde_livre <= LIMITE_CRITICO:
@@ -54,17 +54,15 @@ def classificar_nivel(qtde_livre: int) -> str:
         return "Médio"
     return "Cheio"
 
-
 def calcular_colunas(df: pd.DataFrame) -> pd.DataFrame:
     #Adiciona colunas calculadas: quantidade livre, valor total e nível
     df = df.copy()
     df["Qtde_Livre"]  = df["Qtde_Disponivel"] - df["Qtde_Reservada"]
     df["Valor_Total"] = df["Qtde_Disponivel"] * df["Preco"]
-    df["Nivel"] = df["Qtde_Livre"].apply(classificar_nivel) #aplica a função de classificação para cada linha, através do apply, ao invés de criar um loop para percorrer as linhas manualmente
+    df["Nivel"]       = df["Qtde_Livre"].apply(classificar_nivel)
     return df
 
-#DADOS PARA A PÁGINA WEB (json)
-
+#GERAÇÃO DOS DADOS PARA A PÁGINA WEB (json)
 def gerar_dados_js(df: pd.DataFrame, caminho: str) -> None:
     #Converte o DataFrame em JSON e escreve dados.js (variável global)
     registros = df.to_dict(orient="records")
@@ -77,10 +75,10 @@ def gerar_dados_js(df: pd.DataFrame, caminho: str) -> None:
         "atualizado_em": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
     }
 
-    conteudo_json = json.dumps( #Converte um dicionário ou lista Python em uma string de texto no formato JSON
+    conteudo_json = json.dumps(
         {"resumo": resumo, "produtos": registros},
-        ensure_ascii=False, #acentos e caracteres especiais são mantidos no arquivo
-        indent=2 #formata o json de forma legível
+        ensure_ascii=False,
+        indent=2
     )
 
     try:
@@ -90,16 +88,16 @@ def gerar_dados_js(df: pd.DataFrame, caminho: str) -> None:
     except PermissionError:
         raise PermissionError(f"Sem permissão para escrever: {caminho}")
 
-#SCRIPT JS QUE MONTA A PÁGINA
+# 3. GERAÇÃO DO SCRIPT JS QUE MONTA A PÁGINA
+
 def gerar_script_js(caminho: str) -> None:
-    #Escreve script.js: monta cards e tabela a partir de ESTOQUE_DATA
+   #Escreve script.js: monta cards e tabela a partir de ESTOQUE_DATA
     conteudo = """// script.js – monta a página de estoque a partir de ESTOQUE_DATA (dados.js)
-//formata um número em padrão da moeda brasileira
+
 function formatarMoeda(valor) {
   return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
-//cria um badge colorido para o nível do estoque
 function badgeNivel(nivel) {
   const classes = {
     "Crítico": "nivel-critico",
@@ -109,7 +107,6 @@ function badgeNivel(nivel) {
   return `<span class="badge ${classes[nivel] || ""}">${nivel}</span>`;
 }
 
-//monta os cards de resumo (total, críticos, médios, cheios) e coloca os coloca no html
 function montarCards(resumo) {
   const container = document.getElementById("cards");
   container.innerHTML = `
@@ -132,7 +129,6 @@ function montarCards(resumo) {
   `;
 }
 
-//monta as linhas da tabela de produtos e insere no corpo da tabela
 function montarTabela(produtos) {
   const corpo = document.getElementById("corpo-tabela");
   corpo.innerHTML = produtos.map((p) => `
@@ -161,16 +157,14 @@ function inicializar() {
 
 document.addEventListener("DOMContentLoaded", inicializar);
 """
-    try: #se o arquivo já existir e estiver aberto em outro programa, ou o programa não tem permissão do sistema p/ criar arquivos na pasta
+    try:
         with open(caminho, mode="w", encoding="utf-8") as arquivo:
             arquivo.write(conteudo)
         print(f"[OK] Script gerado: {caminho}")
     except PermissionError:
         raise PermissionError(f"Sem permissão para escrever: {caminho}")
 
-
-#CSS - só para deixar a página mais bonitinha
-
+#GERAÇÃO DO CSS
 def gerar_css(caminho: str) -> None:
     #Escreve estoque.css com o estilo da página
     conteudo = """* { box-sizing: border-box; margin: 0; padding: 0; }
@@ -257,7 +251,6 @@ footer {
   color: #999;
 }
 """
-    #executa a mesma função do try anterior, mas para o arquivo CSS. Se o arquivo já existir e estiver aberto em outro programa, ou o programa não tem permissão do sistema p/ criar arquivos na pasta, ele vai lançar um erro de permissão.
     try:
         with open(caminho, mode="w", encoding="utf-8") as arquivo:
             arquivo.write(conteudo)
@@ -265,10 +258,10 @@ footer {
     except PermissionError:
         raise PermissionError(f"Sem permissão para escrever: {caminho}")
 
-#HTML (apenas estrutura, dados via JS)
+#GERAÇÃO DO HTML (apenas estrutura — dados via JS)
 
 def gerar_html(caminho: str, css_path: str, dados_js_path: str, script_js_path: str) -> None:
-    #Escreve a página HTML, que carrega CSS e os arquivos JS de dados/script.
+    #Escreve a página HTML, que carrega CSS e os arquivos JS de dados/script
     conteudo = f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -279,7 +272,7 @@ def gerar_html(caminho: str, css_path: str, dados_js_path: str, script_js_path: 
 </head>
 <body>
   <header>
-    <h1> Painel de Estoque</h1>
+    <h1>Painel de Estoque</h1>
     <p>Atualizado em: <span id="data-atualizacao">--</span></p>
   </header>
 
@@ -304,16 +297,15 @@ def gerar_html(caminho: str, css_path: str, dados_js_path: str, script_js_path: 
   <script src="{script_js_path}"></script>
 </body>
 </html>"""
-    #executa a mesma função do try anterior, mas para o arquivo HTML. 
+
     try:
         with open(caminho, mode="w", encoding="utf-8") as arquivo:
             arquivo.write(conteudo)
         print(f"[OK] Página HTML gerada: {caminho}")
     except PermissionError:
         raise PermissionError(f"Sem permissão para escrever: {caminho}")
-
-#RELATÓRIO EXCEL (openpyxl)
-
+    
+#GERAÇÃO DO RELATÓRIO EXCEL (openpyxl)
 def _borda_fina() -> Border:
     lado = Side(style="thin", color="CCCCCC")
     return Border(left=lado, right=lado, top=lado, bottom=lado)
@@ -325,18 +317,17 @@ def _cor_nivel(nivel: str) -> str:
 def _aplicar_cabecalho(ws, colunas: list, linha: int = 1) -> None:
     for col_idx, titulo in enumerate(colunas, start=1):
         cell = ws.cell(row=linha, column=col_idx, value=titulo)
-        cell.font = Font(name="Arial", bold=True, color="FFFFFF", size=11)
-        cell.fill = PatternFill("solid", start_color=COR_HEADER)
+        cell.font      = Font(name="Arial", bold=True, color="FFFFFF", size=11)
+        cell.fill      = PatternFill("solid", start_color=COR_HEADER)
         cell.alignment = Alignment(horizontal="center", vertical="center")
-        cell.border = _borda_fina()
+        cell.border    = _borda_fina()
     ws.row_dimensions[linha].height = 22
 
 def _criar_aba_estoque(wb: Workbook, df: pd.DataFrame) -> None:
     #Cria a aba 'Estoque' com os dados detalhados de cada produto
-    ws = wb.active #acessa essa aba que já existe e a guarda na variável ws
-    ws.title = "Estoque" #simplesmente renomeia essa aba
+    ws = wb.active
+    ws.title = "Estoque"
 
-    #nomeia as colunas do excel, e depois chama a função de aplicar o cabeçalho, que formata a linha do cabeçalho (cor, fonte, alinhamento, borda)
     colunas = ["Código", "Produto", "Qtde Disponível", "Qtde Reservada",
                "Qtde Livre", "Preço Unit. (R$)", "Valor Total (R$)", "Nível"]
     _aplicar_cabecalho(ws, colunas)
@@ -348,11 +339,11 @@ def _criar_aba_estoque(wb: Workbook, df: pd.DataFrame) -> None:
         cor_bg = _cor_nivel(row.Nivel)
         for col_idx, valor in enumerate(valores, start=1):
             cell = ws.cell(row=i, column=col_idx, value=valor)
-            cell.font = Font(name="Arial", size=10)
-            cell.fill = PatternFill("solid", start_color=cor_bg)
+            cell.font      = Font(name="Arial", size=10)
+            cell.fill      = PatternFill("solid", start_color=cor_bg)
             cell.alignment = Alignment(horizontal="center" if col_idx != 2 else "left",
                                         vertical="center")
-            cell.border = _borda_fina()
+            cell.border    = _borda_fina()
 
         ws.cell(i, 6).number_format = 'R$ #,##0.00'
         ws.cell(i, 7).number_format = 'R$ #,##0.00'
@@ -375,9 +366,8 @@ def _criar_aba_estoque(wb: Workbook, df: pd.DataFrame) -> None:
 def _criar_aba_resumo(wb: Workbook, df: pd.DataFrame) -> None:
     #Cria a aba 'Resumo' com indicadores gerais do estoque
     ws = wb.create_sheet("Resumo")
-    agora = datetime.now().strftime("%d/%m/%Y %H:%M") #formatação da data
+    agora = datetime.now().strftime("%d/%m/%Y %H:%M")
 
-    #define as configurações dos textos
     ws["A1"] = "RESUMO DO ESTOQUE"
     ws["A1"].font = Font(name="Arial", bold=True, size=14, color="1A237E")
     ws["A2"] = f"Atualizado em: {agora}"
@@ -405,7 +395,7 @@ def _criar_aba_resumo(wb: Workbook, df: pd.DataFrame) -> None:
     ws.column_dimensions["B"].width = 14
 
 def gerar_excel(df: pd.DataFrame, caminho: str) -> None:
-    #Cria o relatório Excel com abas 'Estoque' e 'Resumo'.
+    #Cria o relatório Excel com abas 'Estoque' e 'Resumo'
     wb = Workbook()
     _criar_aba_estoque(wb, df)
     _criar_aba_resumo(wb, df)
@@ -414,10 +404,9 @@ def gerar_excel(df: pd.DataFrame, caminho: str) -> None:
         wb.save(caminho)
         print(f"[OK] Relatório Excel gerado: {caminho}")
     except PermissionError:
-        raise PermissionError(f"Sem permissão para escrever: {caminho}") #mesma coisa, se o arquivo já estiver aberto
+        raise PermissionError(f"Sem permissão para escrever: {caminho}")
 
-#GERAÇÃO DO RELATÓRIO CSV
-
+#GERAÇÃO DO RELATÓRIO CSV (pandas)
 def gerar_csv(df: pd.DataFrame, caminho: str) -> None:
     #Exporta o DataFrame final (com colunas calculadas) para CSV.
     colunas = ["Codigo", "Produto", "Qtde_Disponivel", "Qtde_Reservada",
@@ -425,7 +414,7 @@ def gerar_csv(df: pd.DataFrame, caminho: str) -> None:
 
     try:
         df[colunas].to_csv(caminho, sep=";", index=False, encoding="utf-8",
-                           decimal=",") #mantém o padrão brasileiro de separação decimal e de campo, e não inclui o índice do DataFrame
+                           decimal=",")
         print(f"[OK] Relatório CSV gerado: {caminho}")
     except PermissionError:
         raise PermissionError(f"Sem permissão para escrever: {caminho}")
@@ -433,9 +422,8 @@ def gerar_csv(df: pd.DataFrame, caminho: str) -> None:
         raise OSError(f"Erro ao salvar CSV: {erro}")
 
 #ORQUESTRAÇÃO PRINCIPAL
-
 def processar_estoque() -> None:
-    #Executa todo o fluxo de automação logística
+    """Executa todo o fluxo de automação logística."""
     print("=" * 52)
     print("  SISTEMA DE AUTOMAÇÃO LOGÍSTICA")
     print("=" * 52)
@@ -463,7 +451,7 @@ def processar_estoque() -> None:
     except Exception as erro:
         print(f"[ERRO] Falha inesperada: {erro}")
         raise
-'''Esse bloco foi criado para garantir que a função processar_estoque só seja executada 
-quando o arquivo estoque.py for rodado diretamente pelo terminal.'''
+
+
 if __name__ == "__main__":
     processar_estoque()
