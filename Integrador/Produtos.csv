@@ -1,0 +1,101 @@
+Codigo;Produto;Qtde_Disponivel;Qtde_Reservada;Preco
+725481093;Processador AMD Ryzen 5 5600X Ref-824;189;52;984,30
+032846159;Bateria Moura 60Ah M60GD Ref-551;42;11;532,15
+510487362;Filtro de Óleo Fram Wega Ref-442;310;95;42,80
+884391052;Memória RAM Corsair Vengeance 8GB DDR4 Ref-109;154;32;210,45
+302948175;Pastilha de Freio Dianteira Brembo Ref-673;88;14;195,60
+641029483;Placa de Vídeo RTX 4060 Ref-201;34;8;2150,00
+119284756;SSD Kingston NV2 1TB NVMe Ref-889;240;73;399,90
+903821546;Disco de Freio Ventilado Fremax Ref-341;65;12;285,40
+447192830;Monitor LG UltraGear 24" IPS Ref-762;51;15;1050,00
+582019483;Amortecedor Dianteiro Monroe Ref-129;28;4;480,00
+002938471;Óleo de Motor Castrol Magnatec 5W40 1L Ref-611;410;110;59,90
+661928473;Placa-Mãe ASUS Prime B550M Ref-523;92;18;749,00
+883019284;Palheta do Limpador Bosch Aerotwin Ref-404;175;25;115,00
+340192847;Fonte Corsair CV550 550W Ref-892;113;22;365,50
+552019384;Vela de Ignição NGK Iridium Ref-712;290;40;65,00
+102938482;Processador AMD Ryzen 7 5700X Ref-112;74;15;1199,00
+492019384;Bateria Heliar 60Ah HF60GD Ref-903;53;8;510,00
+381029384;Filtro de Combustível Tecfil Ref-332;420;85;38,50
+882910293;Memória RAM Kingston Fury 16GB Ref-445;198;44;389,00
+901293847;Pastilha de Freio Cobreq Dianteira Ref-212;112;20;145,00
+481029384;Placa de Vídeo RTX 3060 MSI Ref-765;41;9;1850,00
+771029384;SSD Crucial BX500 480GB Ref-221;165;38;245,00
+291029384;Disco de Freio Traseiro TRW Ref-809;78;14;189,90
+661029384;Monitor Samsung T350 24" Ref-543;62;11;799,00
+112039485;Amortecedor Traseiro Cofap Ref-602;45;6;390,00
+992039485;Óleo de Motor Shell Helix 5W30 1L Ref-311;380;90;64,90
+332039485;Placa-Mãe Gigabyte B450M Ref-887;105;23;629,00
+442039485;Palheta do Limpador Dyna Slim Ref-441;210;35;85,00
+552039485;Fonte EVGA 600W 80 Plus Ref-901;87;14;399,00
+772039485;Vela de Ignição Bosch Super 4 Ref-123;340;55;48,00
+882039485;Processador Intel Core i5 12400F Ref-554;120;28;915,00
+113049586;Bateria ACDelco 60Ah Ref-702;39;7;499,00
+223049586;Filtro de Ar Motores Mann Filter Ref-881;280;60;52,00
+663049586;Memória RAM XPG Spectrix 8GB Ref-992;142;25;235,00
+443049586;Pastilha de Freio Dianteira Fras-le Ref-104;135;22;138,00
+553049586;Placa de Vídeo GTX 1650 Speedster Ref-305;29;5;949,00
+993049586;SSD SanDisk Plus 1TB SATA Ref-402;115;21;369,00
+333049586;Disco de Freio Dianteira Hipper Freios Ref-771;95;18;165,00
+773049586;Monitor ASUS VP228H 21.5" Ref-662;48;8;699,00
+883049586;Amortecedor Dianteiro Nakata Ref-339;36;5;425,00
+114059687;Óleo de Motor Selenia 15W40 1L Ref-502;290;70;45,50
+224059687;Placa-Mãe MSI Mag B550 Ref-883;64;12;899,00
+334059687;Palheta Limpador Valeo Cibié Ref-219;160;18;95,00
+444059687;Fonte XPG Pylon 650W Ref-774;93;19;415,00
+554059687;Vela de Ignição Magneti Marelli Ref-661;410;50;35,00
+664059687;Processador AMD Ryzen 5 4500 Ref-102;155;31;549,00
+774059687;Bateria Bosch 60Ah S5 Ref-991;47;10;589,00
+884059687;Filtro de Óleo Bosch Premium Ref-552;490;120;49,90
+994059687;Memória RAM Geil Orion 16GB Ref-304;88;14;349,00
+115069788;Pastilha de Freio Dianteira Willtec Ref-801;160;25;112,00
+225069788;Placa de Vídeo RX 6600 V2 Ref-441;52;13;1499,00
+335069788;SSD XPG SFT 1TB NVMe Ref-663;134;28;429,00
+445069788;Disco de Freio Traseiro Vargas Ref-904;62;9;155,00
+555069788;Monitor AOC Hero 24" 144Hz Ref-221;41;11;1199,00
+665069788;Amortecedor Traseiro Kyb Ref-504;54;8;460,00
+775069788;Óleo de Motor Lubrax Tecno 10W40 Ref-882;330;65;42,00
+885069788;Placa-Mãe Biostar H510M Ref-109;76;15;489,00
+995069788;Palheta Limpador Trico Flex Ref-331;195;22;75,00
+116079889;Fonte Aerocool KCAS 500W Ref-772;112;18;289,00
+226079889;Vela de Ignição Denso Iridium Ref-449;240;35;79,90
+336079889;Processador Intel Core i3 12100F Ref-501;134;22;649,00
+446079889;Bateria Cral 60Ah CL60HD Ref-994;58;12;429,00
+556079889;Filtro de Ar Condicionado Filter Ref-223;520;140;29,90
+666079889;Memória RAM Team Group 8GB Ref-551;210;45;189,00
+776079889;Pastilha de Freio Traseira Bosch Ref-803;94;16;165,00
+886079889;Placa de Vídeo RTX 4070 Dual Ref-104;21;4;4399,00
+996079889;SSD WD Green 480GB SATA Ref-668;185;32;259,00
+117089990;Disco de Freio Dianteiro MDS Ref-334;84;12;148,00
+227089990;Monitor Acer Nitro 23.8" Ref-779;53;14;949,00
+337089990;Amortecedor Dianteiro Corven Ref-202;42;5;360,00
+447089990;Óleo de Motor Havoline 5W30 1L Ref-559;360;80;54,90
+557089990;Placa-Mãe ASUS TUF Gaming B550M Ref-884;82;19;999,00
+667089990;Palheta do Limpador Valeo Evolution Ref-111;140;15;105,00
+777089990;Fonte Seasonic Core 550W Ref-442;46;8;549,00
+887089990;Vela de Ignição ACDelco Ref-709;380;45;32,00
+997089990;Processador AMD Ryzen 9 5900X Ref-335;18;5;2399,00
+118090001;Bateria Tudor 60Ah TUD60 Ref-214;37;6;469,00
+228090001;Filtro de Combustível Fram Ref-882;460;95;41,00
+338090001;Memória RAM Crucial Basics 16GB Ref-505;92;18;315,00
+448090001;Pastilha de Freio Traseira Brembo Ref-664;52;8;245,00
+558090001;Placa de Vídeo RX 7600 XT Ref-102;33;7;2349,00
+668090001;SSD Kingston KC3000 1TB NVMe Ref-443;89;21;649,00
+778090001;Disco de Freio Ventilado BD Ref-772;115;20;198,00
+888090001;Monitor BenQ ZOWIE 24" Ref-331;24;6;1699,00
+998090001;Amortecedor Traseiro Monroe OES Ref-556;68;11;415,00
+119001112;Óleo de Motor Mobil Super 5W40 Ref-809;410;95;58,00
+229001112;Placa-Mãe ASRock Steel Legend Ref-212;73;14;849,00
+339001112;Palheta Limpador Bosch Eco Ref-774;290;40;65,00
+449001112;Fonte Cooler Master 650W Ref-501;104;22;429,00
+559001112;Vela de Ignição Champion Ref-992;310;35;28,00
+669001112;Processador Intel Core i7 12700K Ref-103;31;8;2199,00
+779001112;Bateria Heliar 70Ah HF70GD Ref-448;28;5;689,00
+889001112;Filtro de Ar Elemento Tecfil Ref-339;390;75;46,00
+999001112;Memória RAM Netac RGB 8GB DDR4 Ref-559;165;30;199,00
+120012223;Pastilha de Freio Dianteira SYL Ref-702;198;32;98,00
+230012223;Placa de Vídeo GTX 1660 Super Ref-881;45;10;1349,00
+340012223;SSD ADATA Legend 512GB NVMe Ref-219;142;26;289,00
+450012223;Disco de Freio Solido Fremax Ref-661;124;15;135,00
+560012223;Monitor Philips 24" IPS 75Hz Ref-104;76;12;749,00
+670012223;Amortecedor Dianteiro Corven Plus Ref-552;39;4;385,00
