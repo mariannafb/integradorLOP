@@ -8,11 +8,11 @@ from datetime import datetime
 # CONFIGURAÇÕES
 
 ARQUIVO_CSV_ENTRADA = "Produtos.csv"
-ARQUIVO_DADOS_JS    = "dados.js"
-ARQUIVO_SCRIPT_JS   = "script.js"
-ARQUIVO_HTML        = "estoque.html"
-ARQUIVO_CSS         = "estoque.css"
-ARQUIVO_XLSX        = "relatorio_estoque.xlsx"
+ARQUIVO_DADOS_JS = "dados.js"
+ARQUIVO_SCRIPT_JS = "script.js"
+ARQUIVO_HTML = "estoque.html"
+ARQUIVO_CSS = "estoque.css"
+ARQUIVO_XLSX  = "relatorio_estoque.xlsx"
 ARQUIVO_CSV_SAIDA   = "relatorio_estoque.csv"
 
 LIMITE_CRITICO = 20
@@ -59,7 +59,7 @@ def calcular_colunas(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     df["Qtde_Livre"]  = df["Qtde_Disponivel"] - df["Qtde_Reservada"]
     df["Valor_Total"] = df["Qtde_Disponivel"] * df["Preco"]
-    df["Nivel"]       = df["Qtde_Livre"].apply(classificar_nivel)
+    df["Nivel"] = df["Qtde_Livre"].apply(classificar_nivel)
     return df
 
 #GERAÇÃO DOS DADOS PARA A PÁGINA WEB (json)
@@ -88,7 +88,7 @@ def gerar_dados_js(df: pd.DataFrame, caminho: str) -> None:
     except PermissionError:
         raise PermissionError(f"Sem permissão para escrever: {caminho}")
 
-# 3. GERAÇÃO DO SCRIPT JS QUE MONTA A PÁGINA
+#GERAÇÃO DO SCRIPT JS QUE MONTA A PÁGINA
 
 def gerar_script_js(caminho: str) -> None:
    #Escreve script.js: monta cards e tabela a partir de ESTOQUE_DATA
@@ -104,7 +104,7 @@ function badgeNivel(nivel) {
     "Médio": "nivel-medio",
     "Cheio": "nivel-cheio",
   };
-  return `<span class="badge ${classes[nivel] || ""}">${nivel}</span>`;
+  return `<span class="badge ${classes[nivel] || ""}">${nivel}</span>`; //gera uma string vazia se o objeto nivel nao exis
 }
 
 function montarCards(resumo) {
